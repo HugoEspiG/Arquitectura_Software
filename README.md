@@ -5,6 +5,7 @@
 <br>
 <i><b>Docente:</b></i> Juan Leyva.
 <br>
+<br>
 <i><b>Asignatura:</b></i> Arquitectura de Software.
 <br>
 <br>
