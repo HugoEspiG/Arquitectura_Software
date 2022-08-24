@@ -21,7 +21,7 @@
 <i><b>Estudiante:</b></i> Juan Pablo Cortes Morales.
 <br>
 <br>
-<i><b>Estudiante:</b></i> El que falta.
+<i><b>Estudiante:</b></i> Brayan Steven Bernal Martínez
 <br>
 <br>
 <i><b>Tema:</b></i> Ejercicio cancha de futbol.
