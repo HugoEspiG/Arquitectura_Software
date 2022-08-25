@@ -18,12 +18,28 @@ public class RentaBalon extends Renta {
 
     @Override
     public boolean hacerReserva() {
-        return true;
+        System.out.println("Dia de la reserva: ");
+        String dia=super.sc.nextLine();
+        System.out.println("Hora de la reserva: ");
+        String hora=super.sc.nextLine();
+        if(vefDispo(dia,hora)){
+            dispo.add(new fecha(dia, hora, 2));
+            return true;
+        }else{
+            return false;
+        }
     }
 
+
     @Override
-    public boolean vefDispo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+    public boolean vefDispo (String dia, String hora) {
+        fecha=new fecha(dia, hora, 2);
+        for(fecha f:super.dispo){
+            if(f.equals(fecha)){
+                return false;
+            }
+        }
+
+        return true;
+    }    
 }

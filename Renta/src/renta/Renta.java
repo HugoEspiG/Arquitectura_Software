@@ -1,6 +1,8 @@
 package renta;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,10 +18,10 @@ public abstract class Renta {
     int id_reserva;
     int id_usuario;
     int cantGente;
-    boolean dispo;
     int cantObj;
-    int hora;
-    Date fecha;
+    ArrayList<fecha> dispo;
+    fecha fecha;
+    Scanner sc=new Scanner(System.in);;
 
     public Renta(int id_reserva, int id_usuario, int cantGente) {
         this.id_reserva = id_reserva;
@@ -28,6 +30,6 @@ public abstract class Renta {
     }
     
     public abstract boolean hacerReserva();
-    public abstract boolean vefDispo();
+    public abstract boolean vefDispo(String dia,String hora);
     
 }
