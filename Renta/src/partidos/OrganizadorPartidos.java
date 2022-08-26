@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class OrganizadorPartidos {
     
-    ArrayList<Equipo> equipos = new ArrayList();
+    ArrayList<Equipo> equipos = new ArrayList<Equipo>();
     String cancha;
     Partidos[] partidos;
     Scanner sc = new Scanner(System.in);
