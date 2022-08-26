@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package controlador;
-
 import java.util.Scanner;
 import renta.Renta;
 import renta.RentaArbitro;
@@ -15,13 +10,13 @@ import renta.RentaPetos;
  *
  * @author golden
  */
-public class main {
+public class mainR {
 
+    private static Scanner sc;
 
-    
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);     
-        main m=new main();
+        sc = new Scanner(System.in);     
+        mainR m=new mainR();
         String serv;
         System.out.println("Que servicio desea? ");
         serv=sc.nextLine();
@@ -29,6 +24,15 @@ public class main {
             System.out.println("Reservado!");
         }
 
+    }
+
+    public void servicios (){
+        sc = new Scanner(System.in);
+
+        System.out.println("BIENVENIDO");
+        System.out.println("Ingrese la opción que desee utilizar");
+        System.out.println("1. Realizar una renta");
+        System.out.println("2. Organizar un partido");
     }
     
     public boolean hacerRese(int id_user,int id_reser,int cant_Gente, String servDeseado){
