@@ -2,13 +2,14 @@ package renta;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Generador_alfaNumericos.generador;
 /**
  *
  * @author golden
  */
 public abstract class Renta {
  
-    int id_reserva;
+    String id_reserva;
     int id_usuario;
     int cantGente;
     int cantObj;
@@ -16,8 +17,9 @@ public abstract class Renta {
     fecha fecha;
     Scanner sc=new Scanner(System.in);;
 
-    public Renta(int id_reserva, int id_usuario, int cantGente) {
-        this.id_reserva = id_reserva;
+    public Renta(int id_usuario, int cantGente) {
+        generador g = new generador();
+        this.id_reserva = g.cadenaAleatoria();
         this.id_usuario = id_usuario;
         this.cantGente = cantGente;
     }

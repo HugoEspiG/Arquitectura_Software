@@ -1,4 +1,4 @@
-package javalogin;
+package login;
 /**
  *
  */

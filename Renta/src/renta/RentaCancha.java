@@ -10,10 +10,13 @@ package renta;
  */
 public class RentaCancha extends Renta {
 
-    public RentaCancha(int id_reserva, int id_usuario, int cantGente) {
-        super(id_reserva, id_usuario, cantGente);
-    }
     
+    public RentaCancha(int id_usuario, int cantGente) {
+        super(id_usuario, cantGente);
+        //TODO Auto-generated constructor stub
+    }
+
+
     @Override
     public boolean hacerReserva() {
         System.out.println("Dia de la reserva: ");
