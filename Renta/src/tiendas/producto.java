@@ -1,3 +1,4 @@
+package tiendas;
 public class producto {
 	String nombre;
 	String id;

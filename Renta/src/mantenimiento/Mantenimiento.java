@@ -23,7 +23,7 @@ public class Mantenimiento {
         }
     }
     
-    public static void main(String args[]) {
+    public void hacerMantenimiento() {
         Mantenimiento.limpiar(reserva, hora, tiempo, horario, canchas, cedula, limpio);
         Mantenimiento.balones(hora, horaFinal);
     }
