@@ -5,28 +5,55 @@ import java.sql.SQLException;
 
 public class Login {
     
+    private ArrayList<Usuario> users =new ArrayList<>();
+    public Login() {
+        users.add(new Usuario("1","hugo_admin","Hugo Calderon","100345","admin", "hugo123"));
+        users.add(new Usuario("2","juanpa12","Juan Pablo Rodriguez","11001346","cliente", "jun12"));
+        users.add(new Usuario("3","camilo15","Camilo Cardenas","1004475","cliente", "1004475"));
+        users.add(new Usuario("4","alejandroking","Alejaandro Villamil","52600454","cliente", "tatoabogado"));
+    }
+   
+    public Usuario validar (String pssw, String user){
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUsuario()==user && users.get(i).getPssw()==pssw) {
+                return users.get(i);
+            }
+     
+        } System.out.println("Usuario invalido");
+        return null;
+    }
     
-    public boolean login(String usuario, String password)throws SQLException {
-     try {
-         Conexion conexion = new Conexion().obtener();
-         
-         ResultSet resultado = conexion.consultar("SELECT idusuario, titular, identificacion, tipo_usuario FROM usuarios WHERE usuario = '" + usuario + "' and password = '" + password + "'" );
-         resultado.last();
-         if (resultado.getRow() > 0){
-             Usuario usuarioactual = Usuario.getInstance();
-             //Usuario usuarioactual = new Usuario(resultado.getInt("idusuario"),usuario,resultado.getString("titular"),resultado.getString("identificacion"),resultado.getString("tipo_usuario"));
-             // System.out.println("ID: "+resultado.getString("idusuario"));
-              usuarioactual.setIDUsuario(resultado.getInt("idusuario"));
-              usuarioactual.setIdTipoUsuario(resultado.getString("tipo_usuario"));
-              usuarioactual.setIdentificacion(resultado.getString("identificacion"));
-              usuarioactual.setNombreApellidos(resultado.getString("titular"));                            
-             // System.out.println(""+resultado.getString("titular"));
-             return true;
+    public boolean validarAdmon (Usuario user){
+        
+        if (user.getIdTipoUsuario()=="admon"){
+            return true;
+        };
+        
+        return false;
         }
-   } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+        
+        
+    }
+        
+    
+    /*public Usuario validar (String pssw, String user){
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUsuario()==user && users.get(i).getPssw()==pssw) {
+                return users.get(i);
+            }
+     
         }
-      return false;
-   }
+        return null;
+    }
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Login l = new Login();
+        String pss="hugo123", user="hugo_admin";
+        Usuario r=l.validar(pss, user);
+        System.out.println("R: "+r.getNombreApellidos());
+        System.out.println("Tipo Usuario: "+r.getIdTipoUsuario());
+        
+    }/*
+ 
 }
