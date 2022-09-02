@@ -1,6 +1,7 @@
 package login;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class Login {
@@ -15,7 +16,7 @@ public class Login {
    
     public Usuario validar (String pssw, String user){
         for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getUsuario()==user && users.get(i).getPssw()==pssw) {
+            if (users.get(i).getUsuario().equals(user) && users.get(i).getPssw().equals(pssw)) {
                 return users.get(i);
             }
      
@@ -54,6 +55,6 @@ public class Login {
         System.out.println("R: "+r.getNombreApellidos());
         System.out.println("Tipo Usuario: "+r.getIdTipoUsuario());
         
-    }/*
+    }*/
  
-}
+

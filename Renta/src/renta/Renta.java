@@ -7,21 +7,26 @@ import Generador_alfaNumericos.generador;
  *
  * @author golden
  */
+import manteni.mantinimiento;
 public abstract class Renta {
  
     String id_reserva;
-    int id_usuario;
+    String id_usuario;
     int cantGente;
     int cantObj;
     ArrayList<fecha> dispo;
     fecha fecha;
+    mantinimiento m;
+    generador g ;
     Scanner sc=new Scanner(System.in);;
 
-    public Renta(int id_usuario, int cantGente) {
-        generador g = new generador();
+    public Renta(String id_usuario, int cantGente,mantinimiento m) {
+        g= new generador();
         this.id_reserva = g.cadenaAleatoria();
         this.id_usuario = id_usuario;
         this.cantGente = cantGente;
+        this.m=m;
+        dispo=m.listaFechas();
     }
     
     public abstract boolean hacerReserva();

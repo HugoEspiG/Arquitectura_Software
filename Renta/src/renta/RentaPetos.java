@@ -1,5 +1,7 @@
 package renta;
 
+import manteni.mantinimiento;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -12,10 +14,8 @@ package renta;
  */
 public class RentaPetos extends Renta {
 
-
-
-    public RentaPetos(int id_usuario, int cantGente) {
-        super(id_usuario, cantGente);
+    public RentaPetos(String id_usuario, int cantGente, mantinimiento m) {
+        super(id_usuario, cantGente, m);
         //TODO Auto-generated constructor stub
     }
 
@@ -28,6 +28,7 @@ public class RentaPetos extends Renta {
         String hora=super.sc.nextLine();
         if(vefDispo(dia,hora)){
             dispo.add(new fecha(dia, hora, 4));
+            id_reserva=g.cadenaAleatoria();
             return true;
         }else{
             return false;

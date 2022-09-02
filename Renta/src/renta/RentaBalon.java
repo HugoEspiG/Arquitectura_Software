@@ -1,14 +1,15 @@
 package renta;
 
+import manteni.mantinimiento;
+
 /**
  *
  * @author golden
  */
 public class RentaBalon extends Renta {
 
-
-    public RentaBalon(int id_usuario, int cantGente) {
-        super(id_usuario, cantGente);
+    public RentaBalon(String id_usuario, int cantGente, mantinimiento m) {
+        super(id_usuario, cantGente, m);
         //TODO Auto-generated constructor stub
     }
 
@@ -21,6 +22,7 @@ public class RentaBalon extends Renta {
         String hora=super.sc.nextLine();
         if(vefDispo(dia,hora)){
             dispo.add(new fecha(dia, hora, 2));
+            id_reserva=g.cadenaAleatoria();
             return true;
         }else{
             return false;
