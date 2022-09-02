@@ -2,7 +2,6 @@ package controlador;
 
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
 
 import login.Login;
 import login.Usuario;
@@ -94,13 +93,13 @@ public class logica {
         String serv;
         System.out.println("Que servicio desea? ");
         serv = sc.nextLine();
-        serv="arbitro";
         switch (serv) {
-            case "arbitro" -> r = new RentaArbitro(id_user, cant_Gente,m);
-            case "balon" -> r = new RentaBalon(id_user, cant_Gente,m);
-            case "cancha" -> r = new RentaCancha(id_user, cant_Gente,m);
-            case "peto" -> r = new RentaPetos(id_user, cant_Gente,m);
-            default -> {
+            case "arbitro":r = new RentaArbitro(id_user, cant_Gente,m);break;
+            case "balon": r = new RentaBalon(id_user, cant_Gente,m);break;
+            case "cancha":r = new RentaCancha(id_user, cant_Gente,m);break;
+            case "peto":r = new RentaPetos(id_user, cant_Gente,m);break;
+            default:{
+                System.out.println(serv);
                 System.out.println("Servicio no valido");
                 r = null;
             }
