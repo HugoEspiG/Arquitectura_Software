@@ -1,10 +1,11 @@
-package tiendas;
-public class producto {
+package Renta.src.tiendas;
+
+public class Producto {
 	String nombre;
 	String id;
 	Double  precio;
 
-	public producto(String nombre, String id, Double precio) {
+	public Producto(String nombre, String id, Double precio) {
 		this.nombre = nombre;
 		this.id = id;
 		this.precio = precio;
