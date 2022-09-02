@@ -6,7 +6,6 @@ public class OrganizadorPartidos {
     
     ArrayList<Equipo> equipos = new ArrayList<Equipo>();
     ArrayList<Partidos> partidos = new ArrayList<Partidos>();
-    Scanner sc = new Scanner(System.in);
 
     String idUser;
     int cantJugadores;
@@ -17,21 +16,23 @@ public class OrganizadorPartidos {
     }
 
     
-    public void crearPartidos(){
+    public Partidos crearPartidos(){
         boolean buscando;
+        Partidos partido = new Partidos();
 
         for(int i=0; i<equipos.size(); i++){
             if(equipos.get(i).buscandoPartido){
                 equipos.get(i).setBuscandoPartido(false);
                 buscando = false;
-                partidos.add(new Partidos(equipos.get(i), new Equipo(cantJugadores, idUser, buscando)));
-                System.out.println("¡Se ha asignado un partido!");
+                partido = new Partidos(equipos.get(i), new Equipo(cantJugadores, idUser, buscando));
             }else{
                 buscando = true;
                 equipos.add(new Equipo(cantJugadores, idUser, buscando));
-                System.out.println("No hay equipos disponibles para un partido, quedará en lista de espera..");
+                
             }
         }
+
+        return partido;
         
     }
     
