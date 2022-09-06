@@ -18,7 +18,7 @@ public class OrganizadorPartidos {
     
     public Partidos crearPartidos(){
         boolean buscando;
-        Partidos partido = new Partidos();
+        Partidos partido;
 
         for(int i=0; i<equipos.size(); i++){
             if(equipos.get(i).buscandoPartido){
@@ -32,7 +32,7 @@ public class OrganizadorPartidos {
             }
         }
 
-        return partido;
+        return null;
         
     }
     

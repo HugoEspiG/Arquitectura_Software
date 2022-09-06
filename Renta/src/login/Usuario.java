@@ -13,12 +13,12 @@ public class Usuario {
     private String Usuario;
     private String Nombre;
     private String Identificacion;
-    private String tipo_user;
+    private boolean tipo_user;
     private String pssw;
     
     private static Usuario instance;
 
-    public Usuario(String IDUsuario, String Usuario, String Nombre, String Identificacion, String tipo_user, String pssw) {
+    public Usuario(String IDUsuario, String Usuario, String Nombre, String Identificacion, String pssw,boolean tipo_user) {
         this.IDUsuario = IDUsuario;
         this.Usuario = Usuario;
         this.Nombre = Nombre;
@@ -58,10 +58,10 @@ public class Usuario {
     public void setIdentificacion(String Identificacion) {
         this.Identificacion = Identificacion;
     }
-    public String getIdTipoUsuario() {
+    public boolean getIdTipoUsuario() {
         return tipo_user;
     }
-    public void setIdTipoUsuario(String IdTipoUsuario) {
+    public void setIdTipoUsuario( boolean IdTipoUsuario) {
         this.tipo_user = IdTipoUsuario;
     }
 

@@ -8,10 +8,10 @@ public class Login {
     
     private ArrayList<Usuario> users =new ArrayList<>();
      public Login() {
-        users.add(new Usuario("1","hugo_admin","Hugo Calderon","100345","admin", "hugo123",true));
-        users.add(new Usuario("2","juanpa12","Juan Pablo Rodriguez","11001346","cliente", "jun12",false));
-        users.add(new Usuario("3","camilo15","Camilo Cardenas","1004475","cliente", "1004475",true));
-        users.add(new Usuario("4","alejandroking","Alejaandro Villamil","52600454","cliente", "tatoabogado",false));
+        users.add(new Usuario("1","hugo_admin","Hugo Calderon","100345", "hugo123",true));
+        users.add(new Usuario("2","juanpa12","Juan Pablo Rodriguez","11001346", "jun12",false));
+        users.add(new Usuario("3","camilo15","Camilo Cardenas","1004475", "1004475",true));
+        users.add(new Usuario("4","alejandroking","Alejaandro Villamil","52600454", "tatoabogado",false));
     }
      
     public Usuario validar (String pssw, String user){
@@ -26,7 +26,7 @@ public class Login {
     
     public boolean validarAdmon (Usuario user){
         
-        if (user.getIdTipoUsuario()=="admon"){
+        if (user.getIdTipoUsuario()==true){
             return true;
         };
         return false;

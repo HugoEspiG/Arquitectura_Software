@@ -24,11 +24,12 @@ public class logica {
         if (l.validar(pwd, user) != null) {
             Usuario usuario = l.validar(pwd, user);
             if (l.validarAdmon(usuario)) {
-                return usuarioAdmon;
+                return usuario;
             } else {
                 return usuario;
             }
         }
+        return null;
     }
 
     public boolean hacerRese(String id_user, int cant_Gente, mantinimiento m, String serv) {
@@ -51,7 +52,7 @@ public class logica {
 
 
     public Usuario registro(String pwd, String user, String identificacion, String nom) {
-        Usuario s = new Usuario(identificacion, user, nom, identificacion, "Normal", pwd);
+        Usuario s = new Usuario(identificacion, user, nom, identificacion, pwd,false);
         return s;
     }
 

@@ -1,4 +1,4 @@
-package Renta.src.tiendas;
+package tiendas;
 
 public class Producto {
 	String nombre;
