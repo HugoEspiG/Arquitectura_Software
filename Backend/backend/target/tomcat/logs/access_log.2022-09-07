@@ -1,7 +1,0 @@
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:21 -0500] "GET /backend HTTP/1.1" 302 - http-bio-9090-exec-1 0
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:21 -0500] "GET /backend/ HTTP/1.1" 200 52 http-bio-9090-exec-3 422
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:22 -0500] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-4 0
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:25 -0500] "GET /backend HTTP/1.1" 302 - http-bio-9090-exec-5 0
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:25 -0500] "GET /backend/ HTTP/1.1" 200 52 http-bio-9090-exec-6 1
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:30 -0500] "GET /backend HTTP/1.1" 302 - http-bio-9090-exec-8 0
-0:0:0:0:0:0:0:1 - - [07/Sep/2022:23:18:30 -0500] "GET /backend/ HTTP/1.1" 200 52 http-bio-9090-exec-10 3
