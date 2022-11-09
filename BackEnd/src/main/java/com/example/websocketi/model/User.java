@@ -29,6 +29,14 @@ public class User implements Serializable {
     public void setIdClient(Integer idClient) {
         this.idUser = idClient;
     }
+    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -38,11 +46,11 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public List<Mona> getMessages() {
+    public List<Mona> getMonas() {
         return monas;
     }
 
-    public void setMessages(List<Mona> monas) {
+    public void setMonas(List<Mona> monas) {
         this.monas = monas;
     }
 }

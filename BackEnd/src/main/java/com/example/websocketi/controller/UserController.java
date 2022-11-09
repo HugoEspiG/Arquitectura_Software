@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    @CrossOrigin 
+    @CrossOrigin
     public Optional<User> getClient(@PathVariable("id") int clientId) {
         return clientService.getClient(clientId);
     }

@@ -2,7 +2,7 @@ package com.example.websocketi.service;
 
 
 import com.example.websocketi.model.Mona;
-import com.example.websocketi.repository.MessageRepository;
+import com.example.websocketi.repository.MonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,25 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MessageService {
+public class MonaService {
     @Autowired
-    private MessageRepository messageRepository;
+    private MonaRepository monaRepository;
 
     public List<Mona> getAll(){
-        return messageRepository.getAll();
+        return monaRepository.getAll();
     }
 
     public Optional<Mona> getMessage(int idMessage) {
-        return messageRepository.getMessage(idMessage);
+        return monaRepository.getMessage(idMessage);
     }
 
     public Mona save(Mona message){
         if(message.getIdMessage()==null){
-            return messageRepository.save(message);
+            return monaRepository.save(message);
         }else{
-            Optional<Mona> e= messageRepository.getMessage(message.getIdMessage());
+            Optional<Mona> e= monaRepository.getMessage(message.getIdMessage());
             if(!e.isPresent()){
-                return messageRepository.save(message);
+                return monaRepository.save(message);
             }else{
                 return message;
             }
@@ -37,10 +37,9 @@ public class MessageService {
 
     public Mona update(Mona client){
         if(client.getIdMessage()!=null){
-            Optional<Mona> e= messageRepository.getMessage(client.getIdMessage());
+            Optional<Mona> e= monaRepository.getMessage(client.getIdMessage());
             if(e.isPresent()){
-
-                messageRepository.save(e.get());
+                monaRepository.save(e.get());
                 return e.get();
             }else{
                 return client;
@@ -52,7 +51,7 @@ public class MessageService {
 
     public boolean deleteClient(int messageId) {
         Boolean aBoolean = getMessage(messageId).map(message -> {
-            messageRepository.delete(message);
+            monaRepository.delete(message);
             return true;
         }).orElse(false);
         return aBoolean;
