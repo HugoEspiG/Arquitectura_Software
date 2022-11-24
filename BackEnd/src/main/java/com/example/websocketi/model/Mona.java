@@ -8,31 +8,46 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name ="message")
+@Table(name ="mona")
 public class Mona implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMessage;
-
-    @ManyToOne
-    @JoinColumn(name="clientId")
-    @JsonIgnoreProperties({"messages"})
-    private User client;
+    private Integer idMona;
+    
+    private String name;
+    private String team;
+    private String uimage;
 
     public Integer getIdMessage() {
-        return idMessage;
+        return idMona;
     }
 
-    public void setIdMessage(Integer idMessage) {
-        this.idMessage = idMessage;
+    public void setIdMessage(Integer idMona) {
+        this.idMona = idMona;
+    }
+    
+    public String getName() {
+        return name;
     }
 
-    public User getClient() {
-        return client;
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getTeam() {
+        return team;
     }
 
-    public void setClient(User client) {
-        this.client = client;
+    public void setTeam(String team) {
+        this.team = team;
     }
+    
+    public String getImage() {
+        return uimage;
+    }
+
+    public void setImage(String uimage) {
+        this.uimage = uimage;
+    }
+
 }

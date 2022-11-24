@@ -12,22 +12,23 @@ import java.util.List;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUser;
+    private Integer iduser;
 
     private String name;
     private String password;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    @JsonIgnoreProperties("client")
-    public List<Mona> monas;
-
+    @OneToMany
+    private List<Mona> monas;
+    
+    @OneToMany
+    private List<User> amigos;
+    
     public Integer getIdClient() {
-        return idUser;
+        return iduser;
     }
 
     public void setIdClient(Integer idClient) {
-        this.idUser = idClient;
+        this.iduser = idClient;
     }
     
     public String getPassword() {
@@ -52,5 +53,13 @@ public class User implements Serializable {
 
     public void setMonas(List<Mona> monas) {
         this.monas = monas;
+    }
+    
+    public List<User> getAmigos() {
+        return amigos;
+    }
+
+    public void setAmigos(List<User> amigos) {
+        this.amigos = amigos;
     }
 }

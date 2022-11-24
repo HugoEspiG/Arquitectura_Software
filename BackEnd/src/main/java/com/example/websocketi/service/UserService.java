@@ -2,7 +2,7 @@ package com.example.websocketi.service;
 
 
 import com.example.websocketi.model.User;
-import com.example.websocketi.repository.ClientRepository;
+import com.example.websocketi.repository.UserRepository;
 import com.example.websocketi.socket.Socket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ClientService {
+public class UserService {
     @Autowired
-    private ClientRepository clientRepository;
+    private UserRepository clientRepository;
 
 
     public List<User> getAll(){
@@ -37,6 +37,17 @@ public class ClientService {
             }
         }
     }
+    
+    public boolean login(User user){
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+        System.out.println(user.getIdClient());
+        System.out.println(user);
+        //System.out.println(clientRepository.getClient(153));
+        //if(user.getPassword()==clientRepository.getClient(user.getIdClient()))
+        
+        return true;
+    } 
 
     public User update(User client){
         if(client.getIdClient()!=null){
@@ -62,4 +73,6 @@ public class ClientService {
         }).orElse(false);
         return aBoolean;
     }
+    
+    
 }

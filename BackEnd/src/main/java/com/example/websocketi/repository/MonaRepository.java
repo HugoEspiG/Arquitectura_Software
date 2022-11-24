@@ -3,7 +3,6 @@ package com.example.websocketi.repository;
 
 import com.example.websocketi.model.User;
 import com.example.websocketi.model.Mona;
-import com.example.websocketi.repository.crudRepository.ClientCrudRepository;
 import com.example.websocketi.repository.crudRepository.MonaCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
