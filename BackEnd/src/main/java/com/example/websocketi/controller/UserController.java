@@ -55,7 +55,6 @@ public class UserController {
     public Optional<User> login(@RequestBody User user) {
         String mail = user.getMail();
         String password = user.getPassword();
-        
         /*System.out.println(mail);
         if(mail.equals("pablo@email.com")){
             System.out.println("son iguales");
